@@ -24,8 +24,8 @@ header {
   flex-wrap: wrap;
 }
 
-.logo {
-  width: 200px;
+.logo img {
+  width: 150px;
   height: auto;
 }
 
@@ -53,117 +53,223 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* Hero Section (background image area) */
 .hero {
-  background-color: #b3d4fc;
-  padding: 20px;
-  color: #000;
+  position: relative;
+  background: url("GLASS1.jpg") no-repeat center center/cover;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertically centers text */
+  padding: 0 20px; /* adds breathing room */
+  color: #fff;
+  text-align: center;
+}
+
+.hero-overlay {
+  z-index: 2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* stronger overlay for contrast */
+  z-index: 1;
+}
+
+.hero-overlay h1,
+.hero-overlay p {
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero h1 {
-  font-size: 2.5em;
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
   margin: 0;
-  text-transform: uppercase;
 }
 
 .hero p {
-  font-size: 1em;
-  margin: 10px 0;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #f0f0f0;
 }
 
+/* Products Section */
 .products {
+  position: relative;
+  z-index: 3;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #b3d4fc;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 80px;
+  padding: 20px 0;
+  margin-top: 20px; /* pulls product cards into hero section */
 }
 
 .product-item {
+  position: relative; /* needed for overlay */
   background-color: #fff;
-  padding: 10px;
-  border: 2px solid #000;
-  border-radius: 10px;
-  width: 15%;
-  min-width: 150px;
-  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 220px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 .product-item img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: auto;       /* keeps original ratio */
+  max-height: 200px;  /* ensures it doesn't get too tall */
+  object-fit: contain; /* fits entire image without cropping */
+  display: block;
+  transition: transform 0.3s ease;
+  border-bottom: 2px solid #eee; /* optional */
+}
+
+.product-item:hover img {
+  transform: scale(1.05); /* zoom effect */
+}
+
+/* Hover overlay */
+.product-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px; /* same as image height */
+  background: rgba(195, 214, 18, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-item:hover::after {
+  opacity: 1;
 }
 
 .product-item h2 {
-  font-size: 1em;
+  text-align: center;
+  font-size: 1.1em;
+  color: #333;
   margin: 10px 0;
 }
 
+
+.strip-dark {
+  width: 100%;
+  height: 40px;
+  background-color: #d1d1d1; /* darker gray so it's visible */
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+
+
+
+
+
+/* Services Section */
 .services {
-  padding: 20px;
-  background-color: #b3d4fc;
-  text-align: center;
+  background-color: #f5f5f5;
+  text-align: left;         /* align text to left for better layout */
+  padding: 40px 20px;
+  display: flex;            /* flex container */
+  flex-wrap: wrap;          /* allows wrapping on small screens */
+  gap: 20px;                /* space between text and image */
+  align-items: flex-start;  /* align text and image at top */
 }
 
 .services h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  width: 100%;
+  font-size: 1.6rem;      /* increased heading size */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 3px solid #333;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .services ul {
-  list-style: none;
+  flex: 1;                  /* takes remaining space next to image */
+  list-style: disc inside;
   padding: 0;
-  text-align: left;
-  display: inline-block;
-}
+  line-height: 1.9;
+  font-size: 1.15rem;
+  margin-right: -5px; /* brings text closer to the image */
 
-.services ul li {
-  margin: 5px 0;
-  font-size: 1em;
 }
 
 .services-image {
-  margin-top: 20px;
+  flex: 1;                  /* image container takes remaining space */
+  max-width: 700px;         /* optional: control image width */
 }
 
 .services-image img {
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #000;
-  border-radius: 10px;
+  width: 100%;              /* full width of its container */
+  height: auto;             /* maintain aspect ratio */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 2px solid #ccc;
+  display: block;
 }
 
+
+/* Scroll To Top */
 #scrollToTop {
   display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #4a4a4a;
+  background-color: #555;
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50%;
   font-size: 1.5em;
   cursor: pointer;
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 #scrollToTop:hover {
-  background-color: #333;
+  background-color: #c3d612;
+  color: #000;
 }
 
+/* Footer */
 footer {
-  background-color: #4a4a4a;
+  background-color: #333;
   color: #fff;
   padding: 10px;
-  width: 100%;
   text-align: center;
-  position: relative;
-  bottom: 0;
+  font-size: 0.85em;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+
   .products {
     flex-direction: column;
     align-items: center;
@@ -171,16 +277,19 @@ footer {
 
   .product-item {
     width: 80%;
-    max-width: none;
+    max-width: 300px;
+  }
+
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services ul {
+    text-align: center;
   }
 
   .services-image img {
     width: 100%;
-    height: auto;
-  }
-
-  #scrollToTop {
-    bottom: 10px;
-    right: 10px;
   }
 }
