@@ -136,50 +136,53 @@
     </p>
   </footer>
 
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const totalSlides = slides.length;
-    let autoPlayInterval;
+ <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const totalSlides = slides.length;
+  let autoPlayInterval;
 
-    function showSlide(n) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      
-      currentSlide = (n + totalSlides) % totalSlides;
-      
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
-    function changeSlide(direction) {
-      showSlide(currentSlide + direction);
-      resetAutoPlay();
-    }
-
-    function goToSlide(n) {
-      showSlide(n);
-      resetAutoPlay();
-    }
-
-    function autoPlay() {
-      autoPlayInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
-      }, 4000);
-    }
-
-    function resetAutoPlay() {
-      clearInterval(autoPlayInterval);
-      autoPlay();
-    }
-
-    // Start autoplay
-    autoPlay();
-  </script>
+  function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
     
+    currentSlide = (n + totalSlides) % totalSlides;
+    
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+    resetAutoPlay();
+  }
+
+  function goToSlide(n) {
+    showSlide(n);
+    resetAutoPlay();
+  }
+
+  function autoPlay() {
+    autoPlayInterval = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 4000);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    autoPlay();
+  }
+
+  // ✅ Show the first slide immediately
+  showSlide(0);
+
+  // ✅ Start autoplay once
+  autoPlay();
+</script>
 </body>
 </html>
+
 
 
 
