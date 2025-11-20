@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery - Arnel Glass & Aluminum</title>
+  <link rel="stylesheet" href="PROJECT GALLERY.css">
+</head>
+<body>
+
+  <!-- Header (keep as is) -->
+  <header>
+    <img src="logo.png" alt="Arnel Glass & Aluminum Logo" class="logo">
+    <nav>
+      <a href="HOME.HTML">Home</a>
+      <a href="ABOUTUS.html">About Us</a>
+      <a href="PRODUCT AND SERVICES.html">Products & Services</a>
+      <a href="#">Projects</a>
+      <a href="CONTACT.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Project Gallery</h1>
+    <p>Showcasing the finest glass & aluminum projects</p>
+  </section>
+
+ <!-- Gray Strip below hero -->
+<div class="gray-strip"></div>
+
+  <!-- Project Gallery Background -->
+  <section class="projects-hero">
+    <!-- Semi-transparent overlay handled by CSS -->
+    
+    <!-- Projects Section -->
+    <section class="projects">
+      <!-- Batch 1 -->
+      <div class="project-item batch-1 active-batch">
+        <img src="S568bf82c7bc04f03aa06179927637802d.jpg" alt="Project 1">
+        <div class="overlay">Project 1</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="unnamed (1).jpg" alt="Project 2">
+        <div class="overlay">Project 2</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="unnamed (2).jpg" alt="Project 3">
+        <div class="overlay">Project 3</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="aluminum-door-frames.png" alt="Project 4">
+        <div class="overlay">Project 4</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="494815862_1339991207304190_5006731003287121026_n.jpg" alt="Project 5">
+        <div class="overlay">Project 5</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="132246367_205180471258662_1540798329769164868_n.jpg" alt="Project 6">
+        <div class="overlay">Project 6</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="166738421_271826081260767_3074100135589039789_n.jpg" alt="Project 7">
+        <div class="overlay">Project 7</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="d4c7739c64d77ca03bb322ebd305410c.jpg" alt="Project 8">
+        <div class="overlay">Project 8</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="475307091_1155401249569908_1242855178849487226_n.jpg" alt="Project 9">
+        <div class="overlay">Project 9</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="475156039_1155401472903219_491642190028801448_n.jpg" alt="Project 10">
+        <div class="overlay">Project 10</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="481939368_1183174560125910_2025011376445812302_n.jpg" alt="Project 11">
+        <div class="overlay">Project 11</div>
+      </div>
+      <div class="project-item batch-1 active-batch">
+        <img src="476038532_1161354262307940_3403890797156818922_n.jpg" alt="Project 12">
+        <div class="overlay">Project 12</div>
+      </div>
+
+
+         <!-- Batch 2 -->
+    <div class="project-item batch-2">
+      <img src="475527433_1155401212903245_8628762193045199215_n.jpg" alt="Project 13">
+      <div class="overlay">Project 13</div>
+    </div>
+    <div class="project-item batch-2">
+      <img src="149313435_238591514584224_8405274227863019671_n.jpg" alt="Project 14">
+      <div class="overlay">Project 14</div>
+    </div>
+    <div class="project-item batch-2">
+      <img src="466731633_1105216364588397_5469535229149828100_n.jpg" alt="Project 15">
+      <div class="overlay">Project 15</div>
+    </div>
+    <div class="project-item batch-2">
+      <img src="aldous-mobile-legends-contractor-portrait-osz2a9sh7x2jnwo3.webp" alt="Project 16">
+      <div class="overlay">Project 16</div>
+    </section>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="Enlarged Project" id="lightbox-img">
+  </div>
+
+  <!-- Scroll Up/Down Buttons -->
+  <div class="scroll-indicator top">
+    <button id="scroll-up" aria-label="View previous gallery batch" disabled>▲</button>
+  </div>
+  <div class="scroll-indicator bottom">
+    <button id="scroll-down" aria-label="View next gallery batch">▼</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Arnel Glass & Aluminum. All Rights Reserved.</p>
+    <p>Carpa, Sabang, Baliuag, Bulacan, Philippines</p>
+    <p>📞 (0912) 345-6789 | ✉️ arnelglassaluminum@gmail.com</p>
+    <p>Follow us: 
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a>
+    </p>
+  </footer>
+
+  <!-- JS for batch scrolling and lightbox -->
+  <script>
+    const scrollUpButton = document.getElementById('scroll-up');
+    const scrollDownButton = document.getElementById('scroll-down');
+    const batches = [1,2,];
+    let currentBatch = 0;
+
+    function updateGallery() {
+      document.querySelectorAll('.project-item').forEach(item => item.classList.remove('active-batch'));
+      document.querySelectorAll(`.project-item.batch-${batches[currentBatch]}`).forEach(item => item.classList.add('active-batch'));
+      scrollUpButton.disabled = currentBatch === 0;
+      scrollDownButton.disabled = currentBatch === batches.length-1;
+    }
+
+    scrollUpButton.addEventListener('click', () => {
+      if(currentBatch>0){currentBatch--; updateGallery();}
+    });
+    scrollDownButton.addEventListener('click', () => {
+      if(currentBatch<batches.length-1){currentBatch++; updateGallery();}
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.project-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    updateGallery();
+  </script>
+
+</body>
+</html>
