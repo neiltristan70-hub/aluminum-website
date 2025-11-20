@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Gallery - Arnel Glass & Aluminum</title>
   <link rel="stylesheet" href="css/PROJECT_GALLERY.css">
-
 </head>
 <body>
 
-  <!-- Header (keep as is) -->
+  <!-- Header -->
   <header>
     <img src="logo.png" alt="Arnel Glass & Aluminum Logo" class="logo">
     <nav>
-      <a href="index.HTML">Home</a>
+      <a href="index.html">Home</a>
       <a href="ABOUTUS.html">About Us</a>
       <a href="PRODUCT_AND_SERVICES.html">Products & Services</a>
       <a href="#">Projects</a>
@@ -27,14 +26,11 @@
     <p>Showcasing the finest glass & aluminum projects</p>
   </section>
 
- <!-- Gray Strip below hero -->
-<div class="gray-strip"></div>
+  <!-- Gray Strip below hero -->
+  <div class="gray-strip"></div>
 
-  <!-- Project Gallery Background -->
+  <!-- Projects Section -->
   <section class="projects-hero">
-    <!-- Semi-transparent overlay handled by CSS -->
-    
-    <!-- Projects Section -->
     <section class="projects">
       <!-- Batch 1 -->
       <div class="project-item batch-1 active-batch">
@@ -86,25 +82,25 @@
         <div class="overlay">Project 12</div>
       </div>
 
-
-         <!-- Batch 2 -->
-    <div class="project-item batch-2">
-      <img src="475527433_1155401212903245_8628762193045199215_n.jpg" alt="Project 13">
-      <div class="overlay">Project 13</div>
-    </div>
-    <div class="project-item batch-2">
-      <img src="149313435_238591514584224_8405274227863019671_n.jpg" alt="Project 14">
-      <div class="overlay">Project 14</div>
-    </div>
-    <div class="project-item batch-2">
-      <img src="466731633_1105216364588397_5469535229149828100_n.jpg" alt="Project 15">
-      <div class="overlay">Project 15</div>
-    </div>
-    <div class="project-item batch-2">
-      <img src="aldous-mobile-legends-contractor-portrait-osz2a9sh7x2jnwo3.webp" alt="Project 16">
-      <div class="overlay">Project 16</div>
-    </section>
-  </section>
+      <!-- Batch 2 -->
+      <div class="project-item batch-2">
+        <img src="475527433_1155401212903245_8628762193045199215_n.jpg" alt="Project 13">
+        <div class="overlay">Project 13</div>
+      </div>
+      <div class="project-item batch-2">
+        <img src="149313435_238591514584224_8405274227863019671_n.jpg" alt="Project 14">
+        <div class="overlay">Project 14</div>
+      </div>
+      <div class="project-item batch-2">
+        <img src="466731633_1105216364588397_5469535229149828100_n.jpg" alt="Project 15">
+        <div class="overlay">Project 15</div>
+      </div>
+      <div class="project-item batch-2">
+        <img src="aldous-mobile-legends-contractor-portrait-osz2a9sh7x2jnwo3.webp" alt="Project 16">
+        <div class="overlay">Project 16</div>
+      </div>
+    </section> <!-- Close projects section -->
+  </section> <!-- Close projects-hero -->
 
   <!-- Lightbox Overlay -->
   <div class="lightbox-overlay" id="lightbox">
@@ -135,7 +131,7 @@
   <script>
     const scrollUpButton = document.getElementById('scroll-up');
     const scrollDownButton = document.getElementById('scroll-down');
-    const batches = [1,2,];
+    const batches = [1,2];
     let currentBatch = 0;
 
     function updateGallery() {
@@ -179,8 +175,3 @@
 
 </body>
 </html>
-
-
-
-
-
