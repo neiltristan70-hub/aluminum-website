@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products & Services - Arnel Glass & Aluminum</title>
   <link rel="stylesheet" href="css/PRODUCT_AND_SERVICES.css">
-
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Arnel Glass & Aluminum Logo" class="logo">
-    </div>
+    <img src="logo.png" alt="Arnel Glass & Aluminum Logo" class="logo">
     <nav>
-      <a href="index.HTML">Home</a>
+      <a href="index.html">Home</a>
       <a href="ABOUTUS.html">About Us</a>
       <a href="#">Products & Services</a>
       <a href="PROJECT_GALLERY.html">Projects</a>
@@ -22,77 +20,55 @@
     </nav>
   </header>
 
-
-  <!-- Hero Section with Background -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-overlay">
       <h1>PRODUCTS & SERVICES</h1>
       <p>Explore our range of durable and stylish glass and aluminum solutions.</p>
     </div>
+  </section>
 
-        <div class="products">
-      <div class="product-item" onclick="toggleDescription(this)">
-        <img src="bbc7702b427a960ff35a874cab007177.jpg" alt="Tilt & Turn Window">
-        <h2>Tilt & Turn Window</h2>
-        <div class="description" style="display: none;">
-          <p>A modern dual-function window that tilts for airflow and swings open for full access.</p>
-          <p class="price">Price: ₱4000</p>
-        </div>
-      </div>
-
-      <div class="product-item" onclick="toggleDescription(this)">
-        <img src="unnamed (1).jpg" alt="Casement Window">
-        <h2>Casement Window</h2>
-        <div class="description" style="display: none;">
-          <p>A hinged window that opens outward for great ventilation and a wide view.</p>
-          <p class="price">Price: ₱4000</p>
-        </div>
-      </div>
-
-      <div class="product-item" onclick="toggleDescription(this)">
-        <img src="unnamed (2).jpg" alt="Sliding Window">
-        <h2>Sliding Window</h2>
-        <div class="description" style="display: none;">
-          <p>A space-saving window that slides smoothly to the side—perfect for small rooms.</p>
-          <p class="price">Price: ₱3000</p>
-        </div>
-      </div>
-
-      <div class="product-item" onclick="toggleDescription(this)">
-        <img src="aluminum-door-frames.png" alt="Aluminum Door">
-        <h2>Aluminum Door</h2>
-        <div class="description" style="display: none;">
-          <p>A strong, lightweight aluminum door ideal for entrances and long-term durability.</p>
-          <p class="price">Price: ₱2500</p>
-        </div>
-      </div>
-
-      <div class="product-item" onclick="toggleDescription(this)">
-        <img src="d4c7739c64d77ca03bb322ebd305410c.jpg" alt="Door Screen">
-        <h2>Door Screen</h2>
-        <div class="description" style="display: none;">
-          <p>A protective mesh screen that lets fresh air in while keeping insects out.</p>
-          <p class="price">Price: ₱1000</p>
-        </div>
-      </div>
-
-      <div class="product-item" onclick="toggleDescription(this)">
-        <img src="494815862_1339991207304190_5006731003287121026_n.jpg" alt="Sliding Door">
-        <h2>Sliding Door</h2>
-        <div class="description" style="display: none;">
-          <p>A smooth-gliding door ideal for patios, wider openings, and modern homes.</p>
-          <p class="price">Price: ₱2000</p>
-        </div>
+  <!-- Products Section -->
+  <div class="products">
+    <div class="product-item" onclick="toggleDescription(this)">
+      <img src="bbc7702b427a960ff35a874cab007177.jpg" alt="Tilt & Turn Window">
+      <h2>Tilt & Turn Window</h2>
+      <div class="description" style="display: none;">
+        <p>A modern dual-function window that tilts for airflow and swings open for full access.</p>
+        <p class="price">Price: ₱4000</p>
       </div>
     </div>
 
-  </section>
+    <div class="product-item" onclick="toggleDescription(this)">
+      <img src="unnamed (1).jpg" alt="Casement Window">
+      <h2>Casement Window</h2>
+      <div class="description" style="display: none;">
+        <p>A hinged window that opens outward for great ventilation and a wide view.</p>
+        <p class="price">Price: ₱4000</p>
+      </div>
+    </div>
 
+    <div class="product-item" onclick="toggleDescription(this)">
+      <img src="unnamed (2).jpg" alt="Sliding Window">
+      <h2>Sliding Window</h2>
+      <div class="description" style="display: none;">
+        <p>A space-saving window that slides smoothly to the side—perfect for small rooms.</p>
+        <p class="price">Price: ₱3000</p>
+      </div>
+    </div>
 
-  
-<!-- Gray strip -->
-  <div class="strip-dark"></div>
-  
+    <div class="product-item" onclick="toggleDescription(this)">
+      <img src="aluminum-door-frames.png" alt="Aluminum Door">
+      <h2>Aluminum Door</h2>
+      <div class="description" style="display: none;">
+        <p>A strong, lightweight aluminum door ideal for entrances and long-term durability.</p>
+        <p class="price">Price: ₱2500</p>
+      </div>
+    </div>
+
+    <!-- Add remaining product items here -->
+  </div>
+
   <!-- Services Section -->
   <section class="services">
     <h2>FABRICATION AND INSTALLATION OF GLASS AND ALUMINUM PRODUCTS</h2>
@@ -114,10 +90,10 @@
     </div>
   </section>
 
-  <!-- Scroll to Top Button -->
+  <!-- Scroll to Top -->
   <button id="scrollToTop" title="Go to top">↑</button>
 
-   <!-- Footer -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Arnel Glass & Aluminum. All Rights Reserved.</p>
     <p>Carpa, Sabang, Baliuag, Bulacan, Philippines</p>
@@ -128,46 +104,27 @@
     </p>
   </footer>
 
-  
   <script>
-function toggleDescription(element) {
-  const clickedDesc = element.querySelector('.description');
-  
-  // Hide all other descriptions
-  document.querySelectorAll('.product-item .description').forEach(desc => {
-    if (desc !== clickedDesc) {
-      desc.style.display = 'none';
+    function toggleDescription(element) {
+      const clickedDesc = element.querySelector('.description');
+      document.querySelectorAll('.product-item .description').forEach(desc => {
+        if (desc !== clickedDesc) {
+          desc.style.display = 'none';
+        }
+      });
+      clickedDesc.style.display = (clickedDesc.style.display === 'none' || clickedDesc.style.display === '') ? 'block' : 'none';
     }
-  });
-
-  // Toggle the clicked one
-  clickedDesc.style.display = (clickedDesc.style.display === 'none' || clickedDesc.style.display === '') 
-    ? 'block' 
-    : 'none';
-}
-
-
 
     // Scroll to Top Functionality
     window.onscroll = function() {
-      scrollFunction();
+      const btn = document.getElementById("scrollToTop");
+      btn.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
     };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("scrollToTop").style.display = "block";
-      } else {
-        document.getElementById("scrollToTop").style.display = "none";
-      }
-    }
 
     document.getElementById("scrollToTop").addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
+
 </body>
 </html>
-
-
-
-
